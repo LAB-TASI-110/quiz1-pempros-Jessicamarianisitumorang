@@ -1,0 +1,172 @@
+Soal Pemrograman - Penjumlahan Nilai Siswa
+Deskripsi Masalah
+Data nilai siswa disimpan dalam sebuah rak fisik yang tersusun rapat. Perhatikan pola penyimpanan pada gambar di bawah ini untuk memahami bagaimana kelompok siswa dipisahkan. Input:
+
+Jumlah total data (N).
+Deret nilai (n1, n2, …, n).
+Kode kelompok siswa
+Tugas Buatlah program yang mampu menentukan total nilai hanya untuk kelompok yang diminta. bantu aku memahami dan mengerjakan soal ini dalam bahasa C agar aku bisa menjawab nya dengan benar dan detail 
+
+belum paham,ajarin aku secara detail sekali
+#include <stdio.h>
+
+int main() {
+    int N;
+    int i;
+    int kodeKelompok;
+    int jumlah = 0;
+    
+    // Input jumlah data
+    printf("Masukkan jumlah total data: ");
+    scanf("%d", &N);
+    
+    int nilai[N];
+    
+    // Input nilai
+    printf("Masukkan %d nilai:\n", N);
+    for(i = 0; i < N; i++) {
+        scanf("%d", &nilai[i]);
+    }
+    
+    // Input kode kelompok
+    printf("Masukkan kode kelompok: ");
+    scanf("%d", &kodeKelompok);
+    
+    int jumlahKelompok = 4;  // sesuai gambar
+    int ukuran = N / jumlahKelompok;
+    
+    int indexAwal = (kodeKelompok - 1) * ukuran;
+    int indexAkhir = (kodeKelompok * ukuran) - 1;
+    
+    // Menjumlahkan nilai kelompok tertentu
+    for(i = indexAwal; i <= indexAkhir; i++) {
+        jumlah += nilai[i];
+    }
+    
+    printf("Total nilai kelompok %d adalah: %d\n", kodeKelompok, jumlah);
+    
+    return 0;
+} apakah kode ini sudah benar dan bantu aku menganalisis nya
+
+#include <stdio.h>
+
+int main() {
+    int N, i, kodeKelompok;
+    int jumlah = 0;
+
+    scanf("%d", &N);
+
+    int nilai[100];
+
+    for(i = 0; i < N; i++) {
+        scanf("%d", &nilai[i]);
+    }
+
+    scanf("%d", &kodeKelompok);
+
+    int jumlahKelompok = 4;
+
+    if(N % jumlahKelompok != 0) {
+        printf("Jumlah data tidak bisa dibagi rata!\n");
+        return 0;
+    }
+
+    if(kodeKelompok < 1 || kodeKelompok > jumlahKelompok) {
+        printf("Kode kelompok tidak valid!\n");
+        return 0;
+    }
+
+    int ukuran = N / jumlahKelompok;
+    int indexAwal = (kodeKelompok - 1) * ukuran;
+    int indexAkhir = (kodeKelompok * ukuran) - 1;
+
+    for(i = indexAwal; i <= indexAkhir; i++) {
+        jumlah += nilai[i];
+    }
+
+    printf("%d\n", jumlah);
+
+    return 0;
+} ini sudah benar?
+
+apakah bisa menggunakan N
+#include <stdio.h>
+
+int main() {
+    int N, i, kodeKelompok;
+    int jumlah = 0;
+
+    scanf("%d", &N);
+
+    int nilai[100];
+
+    for(i = 0; i < N; i++) {
+        scanf("%d", &nilai[i]);
+    }
+
+    scanf("%d", &kodeKelompok);
+
+    int jumlahKelompok = 4;
+
+    if(N % jumlahKelompok != 0) {
+        printf("Jumlah data tidak bisa dibagi rata!\n");
+        return 0;
+    }
+
+    if(kodeKelompok < 1 || kodeKelompok > jumlahKelompok) {
+        printf("Kode kelompok tidak valid!\n");
+        return 0;
+    }
+
+    int ukuran = N / jumlahKelompok;
+    int indexAwal = (kodeKelompok - 1) * ukuran;
+    int indexAkhir = (kodeKelompok * ukuran) - 1;
+
+    for(i = indexAwal; i <= indexAkhir; i++) {
+        jumlah += nilai[i];
+    }
+
+    printf("%d\n", jumlah);
+
+    return 0;
+} berarti kuganti ke yg N
+
+#include<stdio.h>
+
+int main(){
+    int N,i,KodeKelompok;
+    int jumlah = 0;
+
+    scanf("%d",&N);
+    int nilai [N];
+    for(i=0;i<N;i++){
+        scanf("%d",&nilai[i]);
+    }   
+    scanf("%d",&KodeKelompok);
+
+    int jumlahKelompok = 4;
+    
+    if(N % jumlahKelompok != 0){
+        printf("Jumlah data tidak bisa dibagi rata");
+        return 0;
+    }
+
+    if(KodeKelompok < 1 || KodeKelompok > jumlahKelompok){
+        printf("Kode kelompok tidak valid");
+        return 0;
+    }
+
+    int ukuranKelompok = N / jumlahKelompok;
+    int indeksAwal = (KodeKelompok - 1) * ukuranKelompok;
+    int indexAkhir = (KodeKelompok * ukuranKelompok) - 1;
+
+    for(i=indeksAwal; i<=indexAkhir; i++){
+        jumlah += nilai[i];
+    }  
+    printf("%d",jumlah);
+
+    return 0;
+
+} apakah kodeku sudah benar?
+ 
+int indexAkhir = (KodeKelompok * ukuranKelompok) - 1 knp ini dikali gk ditambah aja

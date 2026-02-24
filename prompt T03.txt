@@ -1,0 +1,67 @@
+Buatlah sebuah sistem yang dapat mendukung operasional sehari-hari di Laundry Del. bantuin aku membuat ini dengan bahasa C
+program yg sederhana saja
+syntax sederhana dan mudah dipahami ajarin aku
+mau bebas kubuat input an nya
+scanf("%s") ❌ tidak bisa nama pakai spasi
+
+fgets() ✅ bisa "Andi Saputra" knp
+float harga = 7000; bebas
+--- Pelanggan 1 ---
+Masukkan nama pelanggan: Andi Saputra
+Masukkan berat cucian (kg): 3
+
+STRUK
+Nama  : Andi Saputra
+Berat : 3.00 kg
+Total : Rp 21000
+
+--- Pelanggan 2 ---
+Masukkan nama pelanggan: Budi
+Masukkan berat cucian (kg): 5  seperti ini tapi fleksibel harga nya
+getchar(); apa ini
+char nama[50]; fleksibel
+gk ush terbatas
+#include <stdio.h>
+
+int main() {
+
+    int jumlah;
+    float harga;
+
+    printf("=== SISTEM LAUNDRY DEL ===\n");
+
+
+    printf("Masukkan harga per kg: ");
+    scanf("%f", &harga);
+
+    printf("Berapa jumlah pelanggan hari ini? ");
+    scanf("%d", &jumlah);
+    getchar();
+
+    for (int i = 1; i <= jumlah; i++) {
+
+        char nama[50];
+        float berat;
+        float total;
+
+        printf("\n--- Pelanggan %d ---\n", i);
+
+        printf("Masukkan nama pelanggan nya: ");
+        fgets(nama, sizeof(nama), stdin);
+
+        printf("Masukkan berat cucian (kg): ");
+        scanf("%f", &berat);
+        getchar(); 
+
+        total = berat * harga;
+
+        printf("\nSTRUK\n");
+        printf("Nama  : %s", nama);
+        printf("Berat : %.2f kg\n", berat);
+        printf("Total : Rp %.0f\n", total);
+    }
+
+    printf("\nArigatou Gozaimasu\n");
+
+    return 0;
+}  apakah sudah benar?
